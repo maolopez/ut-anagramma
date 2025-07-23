@@ -1,16 +1,14 @@
-FROM python:3.6.9
+FROM public.ecr.aws/lambda/python:3.8
 
-# Bundle app source
-COPY . /
-
-# Install app dependencies
-RUN cp -f requirements.txt /src/ut_anagramma/requirements.txt && \
-    cd src/ut_anagramma && \
-    ls -a && \
-    pip install -r requirements.txt
-
-# Define app directory
+# Set working directory
 WORKDIR /src/ut_anagramma
 
+# Bundle app source
+COPY . .
+
+# Install app dependencies
+RUN pip install -r requirements.txt
+
+# Expose port and define command
 EXPOSE 8082
 CMD ["python", "./main.py"]

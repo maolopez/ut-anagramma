@@ -17,7 +17,7 @@ authors = [
 
 [project.urls]
 "Homepage" = "Your project's homepage URL"
-"Repository" = "Your repository URL"
+"Repository" = "https://github.com/maolopez/ut-anagramma"
 
 [project.dependencies]
 flask = "^1.1.1"
